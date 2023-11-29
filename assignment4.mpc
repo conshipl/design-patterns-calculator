@@ -1,0 +1,34 @@
+// $Id: assignment4.mpc 378 2010-02-07 22:09:38Z hillj $
+
+project (assignment4) {
+  exename = assignment4
+  install = .
+ 
+  specific (make, gnuace) {
+    compile_flags += -std=c++11
+  }
+
+  Source_Files {
+    Add_Command.cpp
+    Binary_Op_Command.cpp
+    Calculator.cpp
+    Divide_Command.cpp
+    Expr_Command.cpp
+    Expr_Command_Factory.cpp
+    Modulo_Command.cpp
+    Multiply_Command.cpp
+    Number_Command.cpp
+    Parenthesis_Command.cpp
+    Stack_Expr_Command_Factory.cpp
+    Subtract_Command.cpp
+    driver.cpp
+  }
+
+  Template_Files {
+    Array_Base.cpp
+    Array.cpp
+    Fixed_Array.cpp
+    Queue.cpp
+    Stack.cpp
+  }
+}
