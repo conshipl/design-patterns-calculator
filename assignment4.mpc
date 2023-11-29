@@ -15,15 +15,20 @@ project (assignment4) {
     Binary_Op_Command.cpp
     Calculator.cpp
     Divide_Command.cpp
+    Divide_Node.cpp
     Expr_Command.cpp
     Expr_Command_Factory.cpp
     Expr_Node.cpp
     Modulo_Command.cpp
+    Modulo_Node.cpp
     Multiply_Command.cpp
+    Multiply_Node.cpp
     Number_Command.cpp
+    Number_Node.cpp
     Parenthesis_Command.cpp
     Stack_Expr_Command_Factory.cpp
     Subtract_Command.cpp
+    Subtract_Node.cpp
     driver.cpp
   }
 

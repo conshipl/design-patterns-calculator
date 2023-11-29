@@ -7,6 +7,7 @@ class Binary_Expr_Node : public Expr_Node
 {
 public:
   Binary_Expr_Node (void);
+  Binary_Expr_Node (Expr_Node * right, Expr_Node * left);
   virtual ~Binary_Expr_Node (void);
 
   virtual void accept (Expr_Node_Visitor & v) = 0;
