@@ -15,6 +15,7 @@ project (assignment4) {
     Divide_Command.cpp
     Expr_Command.cpp
     Expr_Command_Factory.cpp
+    Expr_Node.cpp
     Modulo_Command.cpp
     Multiply_Command.cpp
     Number_Command.cpp
