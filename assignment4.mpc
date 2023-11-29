@@ -10,6 +10,8 @@ project (assignment4) {
 
   Source_Files {
     Add_Command.cpp
+    Add_Node.cpp
+    Binary_Expr_Node.cpp
     Binary_Op_Command.cpp
     Calculator.cpp
     Divide_Command.cpp
