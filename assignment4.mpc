@@ -16,9 +16,11 @@ project (assignment4) {
     Calculator.cpp
     Divide_Command.cpp
     Divide_Node.cpp
+    Eval_Expr_Tree.cpp
     Expr_Command.cpp
     Expr_Command_Factory.cpp
     Expr_Node.cpp
+    Expr_Node_Visitor.cpp
     Modulo_Command.cpp
     Modulo_Node.cpp
     Multiply_Command.cpp
