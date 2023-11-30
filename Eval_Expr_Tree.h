@@ -2,6 +2,7 @@
 #define _EVAL_EXPR_TREE_H_
 
 #include "Expr_Node_Visitor.h"
+#include "Stack.h"
 
 class Eval_Expr_Tree : public Expr_Node_Visitor
 {
@@ -9,6 +10,7 @@ public:
   Eval_Expr_Tree (void);
   virtual ~Eval_Expr_Tree (void);
 
+  virtual void Visit_Binary_Expr_Node (const Binary_Expr_Node & node);
   virtual void Visit_Add_Node (const Add_Node & node);
   virtual void Visit_Divide_Node (const Divide_Node & node);
   virtual void Visit_Modulo_Node (const Modulo_Node & node);
@@ -20,6 +22,9 @@ public:
 
 private:
   int result_;
+  int n1_;
+  int n2_;
+  Stack <int> s_;
 };
 
 #endif
