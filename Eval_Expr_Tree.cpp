@@ -16,7 +16,15 @@ Eval_Expr_Tree::~Eval_Expr_Tree (void)
 
 void Eval_Expr_Tree:Visit_Binary_Expr_Node (const Binary_Expr_Node & node)
 {
-  
+  node.left_-> accept(*this);
+  node.right_-> accept(*this);
+
+  // I don't think Visitor will have access to protected member variables,
+  // but want to try it without the below code first.
+
+  /*	
+  node.get_left_child()-> accept(*this);
+  node.get_right_child()-> accept(*this);*/
   
   n2_ = s_.top();
   s_.pop();
@@ -29,6 +37,9 @@ void Eval_Expr_Tree:Visit_Binary_Expr_Node (const Binary_Expr_Node & node)
 void Eval_Expr_Tree::Visit_Add_Node (const Add_Node & node)
 {
   Visit_Binary_Expr_Node();
+
+  result_ = n1_ + n2_;
+  s_.push(result_);
 }
 
 void Eval_Expr_Tree::Visit_Divide_Node (const Divide_Node & node)
