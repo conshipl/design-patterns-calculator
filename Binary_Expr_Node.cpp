@@ -26,6 +26,9 @@ Binary_Expr_Node::Binary_Expr_Node (int precedence, Expr_Node * right, Expr_Node
   : Expr_Node (precedence),
     right_ (right),
     left_ (left)
+{
+
+}
 
 Binary_Expr_Node::~Binary_Expr_Node (void)
 {

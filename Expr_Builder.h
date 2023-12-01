@@ -1,13 +1,15 @@
 #ifndef _EXPR_BUILDER_H_
 #define _EXPR_BUILDER_H_
 
+#include "Expr_Node.h"
+
 class Expr_Builder
 {
 public:
   Expr_Builder (void);
   ~Expr_Builder (void);
 
-  virtual void start_expression (void);
+  virtual void start_expression (void) = 0;
   virtual void build_add_operator (void) = 0;
   virtual void build_divide_operator (void) = 0;
   virtual void build_modulo_operator (void) = 0;

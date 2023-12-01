@@ -16,6 +16,8 @@
 #include "Stack_Expr_Command_Factory.h"
 #include "Array.h"
 #include "Queue.h"
+#include "Expr_Tree_Builder.h"
+#include "Eval_Expr_Tree.h"
 
 /*
  * @class Calculator
@@ -31,7 +33,7 @@ public:
   /// Default constructor.
   Calculator(void);
 
-  Calculator(Expr_Builder & builder);
+  Calculator(Expr_Builder * builder);
 
   /// Destructor.
   ~Calculator(void);
@@ -60,9 +62,12 @@ public:
 
   bool parse_expr(const std::string & infix);
   int evaluate(const std::string & infix);
+  
+  /// DELETE THIS; MERGE WITH OTHER EXECUTE FOR STRATEGY PATTERN
+  void execute_tree(void);
 
 private:
-
+  Expr_Builder * builder_;
 };
 
 #endif

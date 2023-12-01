@@ -8,7 +8,7 @@ Calculator::Calculator (void)
 
 }
 
-Calculator::Calculator (Expr_Builder & builder)
+Calculator::Calculator (Expr_Builder * builder)
   : builder_ (builder)
 {
 
@@ -20,6 +20,24 @@ Calculator::Calculator (Expr_Builder & builder)
 Calculator::~Calculator (void)
 {
 
+}
+
+/*
+ * This is garbage code and I fully acknowledge it; need to merge the two executes
+ * with Strategy pattern, but probably won't have time tonight, so this seemed 
+ * easiest for the moment.
+ */
+void Calculator::execute_tree (void)
+{
+  std::string infix = get_equation();
+
+  while (infix != "QUIT") {
+    int result = evaluate(infix);
+
+    std::cout << "Result: " << result << std::endl;
+
+    infix = get_equation();
+  }
 }
 
 //
@@ -168,25 +186,25 @@ bool Calculator::parse_expr (const std::string & infix)
   std::istringstream input(infix);
   std::string token;
   
-  builder_.start_expression();
+  //builder_.start_expression();
 
   while (!input.eof()) {
     input >> token;
 
     if (token == "+")
-      builder_.build_add_operator();
+      builder_->build_add_operator();
     else if (token == "-")
-      builder_.build_subtract_operator();
+      builder_->build_subtract_operator();
     else if (token == "*")
-      builder_.build_multiply_operator();
+      builder_->build_multiply_operator();
     else if (token == "/")
-      builder_.build_divide_operator();
+      builder_->build_divide_operator();
     else if (token == "%")
-      builder_.build_modulo_operator();
+      builder_->build_modulo_operator();
     else if (token == " ")
       continue;
     else
-      builder_.build_number(std::stoi(token));
+      builder_->build_number(std::stoi(token));
   }
 
   return true;
@@ -194,9 +212,10 @@ bool Calculator::parse_expr (const std::string & infix)
 
 int Calculator::evaluate (const std::string & infix)
 {
-  if (!parse_expr(infix))
-    throw std::runtime_exception("Bad expression.");
+  /*if (!parse_expr(infix))
+    throw std::runtime_exception("Bad expression.");*/
 
+  parse_expr(infix);
   Expr_Node * expr = builder_->get_expression();
 
   /*if (nullptr == expr.get())
