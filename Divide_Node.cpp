@@ -17,7 +17,7 @@ Divide_Node::~Divide_Node (void)
 
 }
 
-void Divide_Node::accept (Expr_Node_Visitor & v)
+int Divide_Node::accept (Expr_Node_Visitor & v)
 {
-  v.Visit_Divide_Node(*this);
+  return v.Visit_Divide_Node(*this);
 }

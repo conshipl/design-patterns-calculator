@@ -17,7 +17,7 @@ Modulo_Node::~Modulo_Node (void)
 
 }
 
-void Modulo_Node::accept (Expr_Node_Visitor & v)
+int Modulo_Node::accept (Expr_Node_Visitor & v)
 {
-  v.Visit_Modulo_Node(*this);
+  return v.Visit_Modulo_Node(*this);
 }

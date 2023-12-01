@@ -17,7 +17,7 @@ Multiply_Node::~Multiply_Node (void)
 
 }
 
-void Multiply_Node::accept (Expr_Node_Visitor & v)
+int Multiply_Node::accept (Expr_Node_Visitor & v)
 {
-  v.Visit_Multiply_Node(*this);
+  return v.Visit_Multiply_Node(*this);
 }

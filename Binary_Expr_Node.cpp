@@ -20,7 +20,7 @@ Binary_Expr_Node::~Binary_Expr_Node (void)
   delete left_;
 }
 
-Expr_Node * Binary_Expr_Node::get_right_child (void)
+Expr_Node * Binary_Expr_Node::get_right_child (void) const
 {
   return right_;
 }
@@ -30,7 +30,7 @@ void Binary_Expr_Node::set_right_child (Expr_Node * node)
   right_ = node;
 }
 
-Expr_Node * Binary_Expr_Node::get_left_child (void)
+Expr_Node * Binary_Expr_Node::get_left_child (void) const
 {
   return left_;
 }

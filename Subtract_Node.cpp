@@ -17,7 +17,7 @@ Subtract_Node::~Subtract_Node (void)
 
 }
 
-void Subtract_Node::accept (Expr_Node_Visitor & v)
+int Subtract_Node::accept (Expr_Node_Visitor & v)
 {
-  v.Visit_Subtract_Node(*this);
+  return v.Visit_Subtract_Node(*this);
 }

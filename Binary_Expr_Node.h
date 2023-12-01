@@ -10,12 +10,12 @@ public:
   Binary_Expr_Node (Expr_Node * right, Expr_Node * left);
   virtual ~Binary_Expr_Node (void);
  
-  Expr_Node * get_right_child (void);
+  Expr_Node * get_right_child (void) const;
   void set_right_child (Expr_Node * node);
-  Expr_Node * get_left_child (void);
+  Expr_Node * get_left_child (void) const;
   void set_left_child (Expr_Node * node);
 
-  virtual void accept (Expr_Node_Visitor & v) = 0;
+  virtual int accept (Expr_Node_Visitor & v) = 0;
 
 protected:
   Expr_Node * right_;
