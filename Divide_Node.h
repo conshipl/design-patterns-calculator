@@ -7,7 +7,7 @@ class Divide_Node : public Binary_Expr_Node
 {
 public:
   Divide_Node (void);
-  Divide_Node (Expr_Node * right, Expr_Node * left)
+  Divide_Node (Expr_Node * right, Expr_Node * left);
   ~Divide_Node (void);
 
   virtual void accept (Expr_Node_Visitor & v);

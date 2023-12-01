@@ -8,7 +8,8 @@
 #include "Number_Node.h"
 #include "Subtract_Node.h"
 
-class Expr_Node_Visitor {
+class Expr_Node_Visitor 
+{
 public:
   Expr_Node_Visitor (void);
   virtual ~Expr_Node_Visitor (void);

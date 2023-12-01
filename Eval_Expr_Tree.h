@@ -22,9 +22,6 @@ public:
 
 private:
   int result_;
-  int n1_;
-  int n2_;
-  Stack <int> s_;
 };
 
 #endif

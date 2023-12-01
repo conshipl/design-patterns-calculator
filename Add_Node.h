@@ -7,7 +7,7 @@ class Add_Node : public Binary_Expr_Node
 {
 public:
   Add_Node (void);
-  Add_Node (Expr_Node * right, Expr_Node * left)
+  Add_Node (Expr_Node * right, Expr_Node * left);
   ~Add_Node (void);
 
   virtual void accept (Expr_Node_Visitor & v);
