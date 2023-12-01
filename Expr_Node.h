@@ -1,7 +1,7 @@
 #ifndef _EXPR_NODE_H_
 #define _EXPR_NODE_H_
 
-#include "Expr_Node_Visitor.h"
+class Expr_Node_Visitor;
 
 class Expr_Node 
 {

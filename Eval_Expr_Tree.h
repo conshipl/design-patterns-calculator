@@ -10,13 +10,12 @@ public:
   Eval_Expr_Tree (void);
   virtual ~Eval_Expr_Tree (void);
 
-  virtual void Visit_Binary_Expr_Node (const Binary_Expr_Node & node);
-  virtual void Visit_Add_Node (const Add_Node & node);
-  virtual void Visit_Divide_Node (const Divide_Node & node);
-  virtual void Visit_Modulo_Node (const Modulo_Node & node);
-  virtual void Visit_Multiply_Node (const Multiply_Node & node);
-  virtual void Visit_Number_Node (const Number_Node & node);
-  virtual void Visit_Subtract_Node (const Subtract_Node & node);
+  virtual int Visit_Add_Node (const Add_Node & node);
+  virtual int Visit_Divide_Node (const Divide_Node & node);
+  virtual int Visit_Modulo_Node (const Modulo_Node & node);
+  virtual int Visit_Multiply_Node (const Multiply_Node & node);
+  virtual int Visit_Number_Node (const Number_Node & node);
+  virtual int Visit_Subtract_Node (const Subtract_Node & node);
 
   int result (void) const;
 
