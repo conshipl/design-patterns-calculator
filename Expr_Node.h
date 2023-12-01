@@ -7,9 +7,14 @@ class Expr_Node
 {
 public:
   Expr_Node (void);
+  Expr_Node (int precedence);
   virtual ~Expr_Node (void);
 
+  int get_precedence (void);
   virtual int accept (Expr_Node_Visitor & v) = 0;
+
+private:
+  int precedence_;
 };
 
 #endif

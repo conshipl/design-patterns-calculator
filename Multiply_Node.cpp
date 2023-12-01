@@ -1,13 +1,13 @@
 #include "Multiply_Node.h"
 
 Multiply_Node::Multiply_Node (void)
-  : Binary_Expr_Node ()
+  : Binary_Expr_Node (1)
 {
 
 }
 
 Multiply_Node::Multiply_Node (Expr_Node * right, Expr_Node * left)
-  : Binary_Expr_Node (right, left)
+  : Binary_Expr_Node (1, right, left)
 {
 
 }

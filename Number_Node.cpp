@@ -1,7 +1,8 @@
 #include "Number_Node.h"
 
 Number_Node::Number_Node (int num)
-  : value_ (num)
+  : Expr_Node (9),
+    value_ (num)
 {
 
 }

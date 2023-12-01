@@ -1,13 +1,13 @@
 #include "Modulo_Node.h"
 
 Modulo_Node::Modulo_Node (void)
-  : Binary_Expr_Node ()
+  : Binary_Expr_Node (1)
 {
 
 }
 
 Modulo_Node::Modulo_Node (Expr_Node * right, Expr_Node * left)
-  : Binary_Expr_Node (right, left)
+  : Binary_Expr_Node (1, right, left)
 {
 
 }

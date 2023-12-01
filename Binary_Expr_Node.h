@@ -7,7 +7,9 @@ class Binary_Expr_Node : public Expr_Node
 {
 public:
   Binary_Expr_Node (void);
+  Binary_Expr_Node (int precedence);
   Binary_Expr_Node (Expr_Node * right, Expr_Node * left);
+  Binary_Expr_Node (int precedence, Expr_Node * right, Expr_Node * left);
   virtual ~Binary_Expr_Node (void);
  
   Expr_Node * get_right_child (void) const;
