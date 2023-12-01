@@ -156,3 +156,32 @@ void Calculator::infix_to_postfix (const std::string & infix, Stack_Expr_Command
     temp.pop();
   }
 }
+
+bool Calculator::parse_expr (const std::string & infix)
+{
+  std::istringstream input(infix);
+  std::string token;
+  
+  builder_.start_expression();
+
+  while (!input.eof()) {
+    input >> token;
+
+    if (token == "+")
+      builder_.build_add_operator();
+    else if (token == "-")
+      builder_.build_subtract_operator();
+    else if (token == "*")
+      builder_.build_multiply_operator();
+    else if (token == "/")
+      builder_.build_divide_operator();
+    else if (token == "%")
+      builder_.build_modulo_operator();
+    else if (token == " ")
+      continue;
+    else
+      builder_.build_number(std::stoi(token));
+  }
+
+  return true;
+}

@@ -56,6 +56,8 @@ public:
    */
   std::string get_equation(void);
 
+  bool parse_expr (const std::string & infix);
+
 private:
 
 };

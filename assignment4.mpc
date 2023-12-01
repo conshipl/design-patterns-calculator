@@ -19,8 +19,10 @@ project (assignment4) {
     Eval_Expr_Tree.cpp
     Expr_Command.cpp
     Expr_Command_Factory.cpp
+    Expr_Builder.cpp
     Expr_Node.cpp
     Expr_Node_Visitor.cpp
+    Expr_Tree_Builder.cpp
     Modulo_Command.cpp
     Modulo_Node.cpp
     Multiply_Command.cpp
