@@ -8,6 +8,12 @@ Calculator::Calculator (void)
 
 }
 
+Calculator::Calculator (Expr_Builder & builder)
+  : builder_ (builder)
+{
+
+}
+
 //
 // ~Calculator
 //
@@ -184,4 +190,18 @@ bool Calculator::parse_expr (const std::string & infix)
   }
 
   return true;
+}
+
+int Calculator::evaluate (const std::string & infix)
+{
+  if (!parse_expr(infix))
+    throw std::runtime_exception("Bad expression.");
+
+  Expr_Node * expr = builder_->get_expression();
+
+  /*if (nullptr == expr.get())
+    throw std::runtime_exception("No expression!");*/
+
+  Eval_Expr_Tree eval;
+  return expr-> accept(eval);
 }

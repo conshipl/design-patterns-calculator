@@ -31,6 +31,8 @@ public:
   /// Default constructor.
   Calculator(void);
 
+  Calculator(Expr_Builder & builder);
+
   /// Destructor.
   ~Calculator(void);
 
@@ -56,7 +58,8 @@ public:
    */
   std::string get_equation(void);
 
-  bool parse_expr (const std::string & infix);
+  bool parse_expr(const std::string & infix);
+  int evaluate(const std::string & infix);
 
 private:
 
