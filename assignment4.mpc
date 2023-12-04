@@ -20,6 +20,7 @@ project (assignment4) {
     Expr_Command.cpp
     Expr_Command_Factory.cpp
     Expr_Builder.cpp
+    Expr_Evaluator_Strategy.cpp
     Expr_Node.cpp
     Expr_Node_Visitor.cpp
     Expr_Tree_Builder.cpp

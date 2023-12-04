@@ -92,5 +92,7 @@ Expr_Node * Expr_Tree_Builder::get_expression (void)
   }
   
   tree_ = final_stack_.top();
+  final_stack_.pop();
+
   return tree_;
 }

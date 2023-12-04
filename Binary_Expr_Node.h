@@ -24,4 +24,6 @@ protected:
   Expr_Node * left_;
 };
 
+#include "Binary_Expr_Node.inl"
+
 #endif
