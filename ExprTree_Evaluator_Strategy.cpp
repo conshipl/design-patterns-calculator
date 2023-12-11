@@ -53,7 +53,7 @@ void ExprTree_Evaluator_Strategy::evaluate_expression (void)
   Eval_Expr_Tree eval;
   int result = expr-> accept(eval);
 
-  std::cout << "Result: " <<  result << std::endl;
+  std::cout << "Result: " <<  result << "\n" << std::endl;
 
 }
 
