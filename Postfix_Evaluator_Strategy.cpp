@@ -65,7 +65,7 @@ bool Postfix_Evaluator_Strategy::parse_expression (const std::string & expr)
         postfix_.enqueue(temp.top());
 	temp.pop();
       }
-
+      
       temp.pop();
       continue;
     }

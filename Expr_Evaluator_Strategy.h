@@ -8,7 +8,7 @@ class Expr_Evaluator_Strategy
 {
 public:
   Expr_Evaluator_Strategy(void);
-  ~Expr_Evaluator_Strategy(void);
+  virtual ~Expr_Evaluator_Strategy(void) = 0;
 
   virtual bool parse_expression(const std::string & expr) = 0;
   virtual void evaluate_expression(void) = 0;

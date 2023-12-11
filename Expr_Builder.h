@@ -7,7 +7,7 @@ class Expr_Builder
 {
 public:
   Expr_Builder (void);
-  ~Expr_Builder (void);
+  virtual ~Expr_Builder (void) = 0;
 
   virtual void start_expression (void) = 0;
   virtual void build_add_operator (void) = 0;
