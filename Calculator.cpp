@@ -32,9 +32,12 @@ void Calculator::execute_tree (void)
   std::string infix = get_equation();
 
   while (infix != "QUIT") {
-    int result = evaluate(infix);
+    ExprTree_Evaluator_Strategy * strat = new ExprTree_Evaluator_Strategy();
+    if (strat->parse_expression(infix))
+      strat->evaluate_expression();
+    /*int result = evaluate(infix);
 
-    std::cout << "Result: " << result << std::endl;
+    std::cout << "Result: " << result << std::endl;*/
 
     infix = get_equation();
   }

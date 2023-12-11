@@ -18,6 +18,7 @@
 #include "Queue.h"
 #include "Expr_Tree_Builder.h"
 #include "Eval_Expr_Tree.h"
+#include "ExprTree_Evaluator_Strategy.h"
 
 /*
  * @class Calculator
