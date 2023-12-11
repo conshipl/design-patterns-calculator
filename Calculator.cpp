@@ -27,6 +27,9 @@ void Calculator::execute (void)
     Expr_Evaluator_Strategy * strat = preprocess(infix);
     if (strat->parse_expression(infix))
       strat->evaluate_expression();
+    
+    delete strat;
+    strat = nullptr;
 
     infix = get_equation();
   }

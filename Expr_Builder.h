@@ -15,6 +15,8 @@ public:
   virtual void build_modulo_operator (void) = 0;
   virtual void build_multiply_operator (void) = 0;
   virtual void build_number (int n) = 0;
+  virtual void build_parenthesis (void) = 0;
+  virtual void handle_parenthesis (void) = 0;
   virtual void build_subtract_operator (void) = 0;
 
   virtual Expr_Node * get_expression (void) = 0;

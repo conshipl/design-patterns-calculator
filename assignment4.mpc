@@ -32,6 +32,7 @@ project (assignment4) {
     Number_Command.cpp
     Number_Node.cpp
     Parenthesis_Command.cpp
+    Parenthesis_Node.cpp
     Postfix_Evaluator_Strategy.cpp
     Stack_Expr_Command_Factory.cpp
     Subtract_Command.cpp

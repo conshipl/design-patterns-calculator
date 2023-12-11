@@ -8,6 +8,7 @@
 #include "Modulo_Node.h"
 #include "Multiply_Node.h"
 #include "Number_Node.h"
+#include "Parenthesis_Node.h"
 #include "Subtract_Node.h"
 
 class Expr_Tree_Builder : public Expr_Builder
@@ -23,7 +24,9 @@ public:
   virtual void build_modulo_operator (void);
   virtual void build_multiply_operator (void);
   virtual void build_number (int n);
+  virtual void build_parenthesis (void);
   virtual void build_subtract_operator (void);
+  virtual void handle_parenthesis (void);
   void insert_node (Binary_Expr_Node * node);
 
   Expr_Node * get_expression (void);

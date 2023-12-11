@@ -31,6 +31,10 @@ bool ExprTree_Evaluator_Strategy::parse_expression (const std::string & expr)
       builder_->build_divide_operator();
     else if (token == "%")
       builder_->build_modulo_operator();
+    else if (token == "(")
+      builder_->build_parenthesis();
+    else if (token == ")")
+      builder_->handle_parenthesis();
     else if (token == " ")
       continue;
     else

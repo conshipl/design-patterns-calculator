@@ -26,7 +26,7 @@ int Eval_Expr_Tree::Visit_Add_Node (const Add_Node & node)
 // accumulate state in the visitor object, and access the state as needed.
 int Eval_Expr_Tree::Visit_Divide_Node (const Divide_Node & node)
 {
-  return node.get_left_child()-> accept(*this) + node.get_right_child()-> accept(*this); 
+  return node.get_left_child()-> accept(*this) / node.get_right_child()-> accept(*this); 
 }
 
 // COMMENT: Do not return a value from the accept () or visit () methods

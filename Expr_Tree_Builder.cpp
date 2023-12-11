@@ -8,7 +8,7 @@ Expr_Tree_Builder::Expr_Tree_Builder (void)
 
 Expr_Tree_Builder::~Expr_Tree_Builder (void)
 {
-
+  delete tree_;
 }
 
 void Expr_Tree_Builder::start_expression (void)
@@ -51,6 +51,32 @@ void Expr_Tree_Builder::build_number (int n)
   final_stack_.push(node);
 }
 
+void Expr_Tree_Builder::build_parenthesis (void)
+{
+  Binary_Expr_Node * node = new Parenthesis_Node();
+
+  initial_stack_.push(node);
+}
+
+void Expr_Tree_Builder::handle_parenthesis (void)
+{  
+  while ( (!initial_stack_.is_empty()) && (initial_stack_.top()->get_precedence() != 2) ) {
+    Binary_Expr_Node * temp = initial_stack_.top();
+    initial_stack_.pop();
+
+    temp->set_right_child(final_stack_.top());
+    final_stack_.pop();
+
+    temp->set_left_child(final_stack_.top());
+    final_stack_.pop();
+
+    final_stack_.push(temp);
+  }
+
+  delete initial_stack_.top();
+  initial_stack_.pop();
+}
+
 void Expr_Tree_Builder::build_subtract_operator (void)
 {
   Binary_Expr_Node * node = new Subtract_Node();
@@ -60,7 +86,7 @@ void Expr_Tree_Builder::build_subtract_operator (void)
 
 void Expr_Tree_Builder::insert_node (Binary_Expr_Node * node)
 {
-  while ( (!initial_stack_.is_empty()) && (node->get_precedence() <= initial_stack_.top()->get_precedence()) ) {
+  while ( (!initial_stack_.is_empty()) && (initial_stack_.top()->get_precedence() != 2) && (node->get_precedence() <= initial_stack_.top()->get_precedence()) ) {
     Binary_Expr_Node * temp = initial_stack_.top();
     initial_stack_.pop();
 
