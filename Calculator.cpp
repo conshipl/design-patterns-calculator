@@ -46,6 +46,9 @@ std::string Calculator::get_equation (void)
   return equation;
 }
 
+//
+// preprocess
+//
 Expr_Evaluator_Strategy * Calculator::preprocess (std::string & expr)
 {
   bool use_postfix = false;
