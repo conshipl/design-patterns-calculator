@@ -6,7 +6,7 @@ A simple calculator that takes a user input infix expression in the form of "( 5
 
 It can perform add, subtract, divide, multiply, and modulo operations, and behaves correctly in the presence of parentheses.
 
-The project showcases the following patterns:
+__The project showcases the following Gang of Four patterns:__
 * Wrapper/Facade
 * Command
 * Template
@@ -16,6 +16,11 @@ The project showcases the following patterns:
 * Visitor
 * Builder
 * Strategy
+
+## Informal Diagram: ##
+
+[![mainmenu](https://github.com/conshipl/king-of-tokyo/blob/master/mainmenu.PNG)](mainmenu.PNG)
+
 
 ## Backstory
 Initially, I was tasked with building an Array ADT that acts as a Wrapper/Facade for the underlying C++ array class, extending its functionality with features such as resize, shrink, slice, fill, find, + and = overloading, etc. The Array class is also a generic/template, allowing it to create an array out of any provided type. Then, utilizing my custom Array class, I built Stack and Queue ADTs that perform all expected operations (push, enqueue, pop, etc.). Next, I used the Stack and Queue ADTs to make a basic calculator that accepts a user input infix expression in the form of "( 5 + 7 ) / 2", parses it into either a postfix expression or expression tree, evaluates, and returns the correct result.
