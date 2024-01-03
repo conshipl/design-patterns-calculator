@@ -39,6 +39,8 @@ It was a lot of hard work and I'm proud of it, but it was created during the sch
 * Visitor Pattern isn't properly implemented (I defeated the spirit of the pattern by returning the result through recursion instead of having the Visitor accumulate state)
 * No division by zero check in expression tree strategy
 * Parenthesis Command/Node is violating good coding practice (it's not really a Command or a Node, it's just a placeholder; could refactor to use recursion and avoid creating objects for parentheses)
+* Could implement Iterator Pattern for Array/Stack/Queue
+* Could implement Proxy Pattern (smart pointers)
 * Infix expression isn't being preprocessed (I still need to figure out what heuristics to apply to determine the correct strategy, postfix or expression tree; currently it always does expression tree)
 
 ## Technologies
