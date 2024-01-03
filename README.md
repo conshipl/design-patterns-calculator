@@ -19,7 +19,7 @@ __The project showcases the following Gang of Four patterns:__
 
 ## Informal Diagram: ##
 
-[![mainmenu](https://github.com/conshipl/king-of-tokyo/blob/master/mainmenu.PNG)](mainmenu.PNG)
+[![calculator](https://github.com/conshipl/design-patterns-calculator/blob/master/calculator.jpg)](calculator.jpg)
 
 
 ## Backstory
