@@ -1,16 +1,25 @@
 #include "Postfix_Evaluator_Strategy.h"
 
+//
+// Postfix_Evaluator_Strategy
+//
 Postfix_Evaluator_Strategy::Postfix_Evaluator_Strategy (void)
   : stack_factory_ (new Stack_Expr_Command_Factory(result_))
 {
 
 }
 
+//
+// Postfix_Evaluator_Strategy
+//
 Postfix_Evaluator_Strategy::~Postfix_Evaluator_Strategy (void)
 {
   delete stack_factory_;
 }
 
+//
+// parse_expression
+//
 bool Postfix_Evaluator_Strategy::parse_expression (const std::string & expr)
 {
   std::istringstream input(expr);
@@ -41,21 +50,6 @@ bool Postfix_Evaluator_Strategy::parse_expression (const std::string & expr)
       continue;
     }
     else if (token == ")") {
-
-        // COMMENT: Create a design that does not require having parenthesis as
-        // as command object since parenthesis are not executed.
-	//
-        // REPLY: A family member has developed an illness and needed a procedure
-        // and I've been taking care of them the last three weeks. Between this
-        // and hosting Thanksgiving on Thursday, I just don't have the time to 
-        // redesign this program, unfortunately.
-        //
-        // I tried to think through it and come up with an easy/clever solution,
-        // but I couldn't think of anything. My possible solution was to change
-        // the algorithm a bit so that I could call the infix_to_postfix function
-        // recursively, and then when a parenthesis was encountered, it would go
-        // into the recursive sub-call and evaluate the inside of the parenthesis
-        // first.
         
       /*
        * Until we reach the opening parenthesis, pop elements off 
@@ -102,6 +96,9 @@ bool Postfix_Evaluator_Strategy::parse_expression (const std::string & expr)
   return true;
 }
 
+//
+// evaluate_expression
+//
 void Postfix_Evaluator_Strategy::evaluate_expression (void)
 {
   while (!postfix_.is_empty()) {
@@ -118,16 +115,25 @@ void Postfix_Evaluator_Strategy::evaluate_expression (void)
 
 }
 
+//
+// is_valid_expression
+//
 bool Postfix_Evaluator_Strategy::is_valid_expression (void) const
 {
   return true;
 }
 
+//
+// number_of_operators
+//
 size_t Postfix_Evaluator_Strategy::number_of_operators (void) const
 {
   return 0;
 }
 
+//
+// number_of_operands
+//
 size_t Postfix_Evaluator_Strategy::number_of_operands (void) const
 {
   return 0;
