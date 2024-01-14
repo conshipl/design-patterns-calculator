@@ -37,7 +37,6 @@ It was a lot of hard work and I'm proud of it, but it was created during the sch
 * Need to delete professor comments/replies
 * A few lines of dead or currently unimplemented code (Stack_Factory isn't using a stack anymore, for example; it got switched to Flyweight Pattern, but stack member variable was never deleted)
 * Visitor Pattern isn't properly implemented (I defeated the spirit of the pattern by returning the result through recursion instead of having the Visitor accumulate state)
-* No division by zero check in expression tree strategy
 * Parenthesis Command/Node is violating good coding practice (it's not really a Command or a Node, it's just a placeholder; could refactor to use recursion and avoid creating objects for parentheses)
 * Could implement Iterator Pattern for Array/Stack/Queue
 * Could implement Proxy Pattern (smart pointers)
