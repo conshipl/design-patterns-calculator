@@ -30,7 +30,15 @@ int Eval_Expr_Tree::Visit_Add_Node (const Add_Node & node)
 //
 int Eval_Expr_Tree::Visit_Divide_Node (const Divide_Node & node)
 {
-  return node.get_left_child()-> accept(*this) / node.get_right_child()-> accept(*this); 
+  try {
+    if (node.get_right_child()->accept(*this) == 0)
+      throw division_by_zero_exception();
+    return node.get_left_child()-> accept(*this) / node.get_right_child()-> accept(*this);
+  }
+  catch (division_by_zero_exception e) {
+    std::cout << "INVALID EXPRESSION, DIVISION BY ZERO; RESULT WILL BE INCORRECT." << std::endl;
+    return 0;
+  } 
 }
 
 //

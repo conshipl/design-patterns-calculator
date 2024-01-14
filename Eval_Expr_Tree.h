@@ -8,10 +8,26 @@
 #include "Multiply_Node.h"
 #include "Number_Node.h"
 #include "Subtract_Node.h"
+#include <iostream>
+#include <exception>
 
 class Eval_Expr_Tree : public Expr_Node_Visitor
 {
 public:
+
+  /*
+   * @class division_by_zero_exception
+   *
+   * Exception thrown to indicate division by zero.
+   */
+  class division_by_zero_exception : public std::exception
+  {
+  public:
+    /// Default constructor.
+    division_by_zero_exception (void)
+      : std::exception () { }
+  };
+
   Eval_Expr_Tree (void);
   virtual ~Eval_Expr_Tree (void);
 
