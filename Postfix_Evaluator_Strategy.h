@@ -1,3 +1,11 @@
+// -*- C++ -*-
+
+//==============================================================================
+/**
+ * @file         Postfix_Evaluator_Strategy.h
+ */
+//==============================================================================
+
 #ifndef _POSTFIX_EVALUATOR_STRATEGY_H_
 #define _POSTFIX_EVALUATOR_STRATEGY_H_
 

@@ -1,3 +1,11 @@
+// -*- C++ -*-
+
+//==============================================================================
+/**
+ * @file         ExprTree_Evaluator_Strategy.h
+ */
+//==============================================================================
+
 #ifndef _EXPRTREE_EVALUATOR_STRATEGY_H_
 #define _EXPRTREE_EVALUATOR_STRATEGY_H_
 

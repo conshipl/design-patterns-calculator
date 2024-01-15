@@ -23,7 +23,7 @@
 /**
  * @class Array
  *
- * Basic implementation of a standard array class for elements of type T..
+ * Basic implementation of a standard array class for elements of type T.
  */
 template <typename T>
 class Array : public Array_Base <T>
